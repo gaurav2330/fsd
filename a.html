@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>
+            Shopping website
+        </title>
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+        <link rel="stylesheet" href="a.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="loginpage">
+        <div class="form">
+            <form class="register-form" onsubmit="return validateForm1()">
+                <input type="text" placeholder="Username" id="user1" autocomplete="off">
+                <input type="password" placeholder="Password" id="pass1">
+                <input type="text" placeholder="Email ID" id="email" autocomplete="off">
+                <button>Register</button>
+                <p class="message">Already Registered?<a href="#">Login</a></p>
+            </form>
+            <form class="loginform" name="loginform" onsubmit="return validateForm()">
+                <input type="text" placeholder="Username" name="fname" id="user" autocomplete="off">
+                <input type="password" placeholder="Password" id="pass">
+                <button>Login</button>
+                <p class="message">Not Registered?<a href="#">Register</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+       $('.message a').click(function(){
+        $('form').animate({height:"toggle", opacity:"toggle"},"slow");
+       });
+
+
+
+       function validateForm1() {
+  var user1= document.getElementById('user1').value;
+  var pass1= document.getElementById('pass1').value;
+  var email= document.getElementById('email').value;
+
+  if (user1== "") {
+    alert("Username must be filled out");
+    return false;
+  }
+  if((user1.length<=2)||(user1.length>20)){
+      alert("Username must be 3 to 20 characters long");
+      return false;
+  }
+  if(!isNaN(user1))
+  {
+      alert("Username must not begin with a number");
+      return false;
+  }
+
+
+
+  if (pass1 == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+  if((pass1.length<=6)||(pass1.length>20)){
+      alert("Password must be 6 to 20 characters long")
+  }
+
+
+
+  if (email == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  
+}
+
+
+
+
+       function validateForm() {
+  var user= document.getElementById('user').value;
+  var pass= document.getElementById('pass').value;
+
+  if (user == "") {
+    alert("Username must be filled out");
+    return false;
+  }
+
+  if (pass == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+}
+    </script>
+    </body>
+</html>
